@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from pathlib import Path 
 import os
+import django_heroku
 import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -135,3 +136,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = "todolist"
 LOGIN_URL = "login"
+
+django_heroku.settings(locals())
